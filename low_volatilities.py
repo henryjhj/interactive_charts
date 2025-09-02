@@ -8,7 +8,7 @@ import yfinance as yf
 import datetime
 import time
 
-st.title("美国股市低波动率股票")
+st.title("低波动率美股筛选器")
 
 def get_low_volatility_stocks(lookback_years=5, volatility_threshold=3):
     """Fetches low volatility stocks from the S&P 500."""
@@ -48,5 +48,5 @@ volatility_threshold = st.slider("选择振幅阈值", 1.0, 5.0, 2.5)
 low_vol_stocks = get_low_volatility_stocks(lookback_years, volatility_threshold)
 
 # # 显示低波动率股票
-st.write(f"近{lookback_years}年股价高低振幅低于{volatility_threshold}的SP500股票, 共{low_vol_stocks.shape[0]}只：")
+st.write(f"#### 符合上述筛选条件的股票共{low_vol_stocks.shape[0]}只：")
 st.dataframe(low_vol_stocks)
