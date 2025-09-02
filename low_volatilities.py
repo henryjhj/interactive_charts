@@ -43,8 +43,8 @@ def get_low_volatility_stocks(lookback_years=5, volatility_threshold=3):
     return pd.DataFrame(low_vol_list)
 
 # 用streamlit设定回看年数和volatility阈值
-lookback_years = st.slider("选择回看年数", 1, 10, 5)
-volatility_threshold = st.slider("选择振幅阈值", 1.0, 5.0, 3.0)
+lookback_years = st.slider("选择回看年数", 1, 10, 10)
+volatility_threshold = st.slider("选择振幅阈值", 1.0, 5.0, 2.5)
 low_vol_stocks = get_low_volatility_stocks(lookback_years, volatility_threshold)
 
 # # 显示低波动率股票
